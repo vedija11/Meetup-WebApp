@@ -1,0 +1,136 @@
+use explorers;
+db.dropDatabase();
+
+use explorers;
+db.createCollection('connections');
+db.createCollection('users');
+db.createCollection('userconnections');
+
+show collections;
+
+db.connections.insert({
+  connectionId: 100,
+  connectionName: "Outdoor Adventures",
+  connectionTopic: "Charlotte Hiking Club",
+  connectionDetails: "This group is for Charlotte area outdoor enthusiasts who enjoy hiking, walking, exploring NC nature, and making new friends. We are a network of people who are interested in meeting up for hikes in or around the Charlotte/Piedmont area.",
+  connectionTime: "5:30 pm",
+  connectionDate: "01-30-2020",
+  connectionPlace: "Charlotte, NC",
+  hostedBy: "Martha H.",
+  imageURL: '../assets/images/hiking.png',
+  going: 11,
+  userId: "vedija11"
+});
+
+db.connections.insert({
+  connectionId: 101,
+  connectionName: "Outdoor Adventures",
+  connectionTopic: "Charlotte Area Cycling",
+  connectionDetails: "Join us for enjoyable cycling in the Charlotte area: great rides, great people, nice places, fitness and fun. We gravel ride, mountain bike and road ride any day of the week at various locations around the city and the surrounding area.",
+  connectionTime: "6:00 am",
+  connectionDate: "03-07-2020",
+  connectionPlace: "Eastway, Charlotte",
+  hostedBy: "Michael K.",
+  imageURL: '../assets/images/cycling.png',
+  going: 20,
+  userId: "vedija11"
+});
+
+db.connections.insert({
+  connectionId: 102,
+  connectionName: "Outdoor Adventures",
+  connectionTopic: "Riders of Charlotte",
+  connectionDetails: "We welcome all riders regardless of brand or style to come ride with us. Doesn't matter your age, gender or level of experience. We are not into bar hopping or being reckless. This group was formed to be both family friendly and safe, with events that you would not be afraid to bring you children to.",
+  connectionTime: "8:30 am",
+  connectionDate: "02-18-2020",
+  connectionPlace: "Wildwoods, Charlotte",
+  hostedBy: "Danielle C.",
+  imageURL: '../assets/images/riders.png',
+  going: 5,
+  userId: "aish19"
+});
+
+db.connections.insert({
+  connectionId: 103,
+  connectionName: "Indoor Fun",
+  connectionTopic: "Defy Gravity",
+  connectionDetails: "A collection of extreme air sport parks across America that are rewriting the rules of sport — giving our communities a place where they’re free to express and push themselves.",
+  connectionTime: "11:30 am",
+  connectionDate: "11-30-2020",
+  connectionPlace: "8116 University City Blvd, Charlotte",
+  hostedBy: "Martha H.",
+  imageURL: '../assets/images/defygravity.jpg',
+  going: 29,
+  userId: "testuser1"
+});
+
+db.connections.insert({
+  connectionId: 104,
+  connectionName: "Indoor Fun",
+  connectionTopic: "iFly",
+  connectionDetails: "The most fun you can have in under 2 hours. A gift or event venue that stands out from the rest. The most thrilling STEM field trip ever. The most technologically advanced body flying tunnels in the world.",
+  connectionTime: "10:00 am",
+  connectionDate: "05-25-2020",
+  connectionPlace: "7840 Lyles Ln NW, Concord, NC",
+  hostedBy: "Denise C.",
+  imageURL: '../assets/images/ifly.jpg',
+  going: 18,
+  userId: "testuser1"
+});
+
+db.connections.insert({
+  connectionId: 105,
+  connectionName: "Indoor Fun",
+  connectionTopic: "Laser Tag",
+  connectionDetails: "A family entertainment game for kids and youth. Our multi-level arenas have specialty lighting, swirling fog and energetic music to add to the excitement for up to 32 or more players in each game.",
+  connectionTime: "5:00 pm",
+  connectionDate: "03-03-2020",
+  connectionPlace: "Harrisburg, NC",
+  hostedBy: "Andrew R.",
+  imageURL: '../assets/images/lasertag.jpg',
+  going: 10,
+  userId: "testuser1"
+});
+
+db.users.insertMany([
+{
+  userId: "vedija11",
+  fname: "Vedija",
+  lname: "Jagtap",
+  email: "vjagtap@uncc.edu",
+  address: "University Terrace Drive",
+  city: "Charlotte",
+  zipcode: 28262,
+  country: "United States",
+  password: "VEDija11"
+},
+{
+  userId: "aish19",
+  fname: "Aishwarya",
+  lname: "Gadgil",
+  email: "aish19@uncc.edu",
+  address: "Ashford",
+  city: "Charlotte",
+  zipcode: 28218,
+  country: "United States",
+  password: "AIsh19"
+}
+]);
+
+
+db.userconnections.insert({
+  userId: "vedija11",
+  connection: {
+  connectionId: 105,
+  connectionName: "Indoor Fun",
+  connectionTopic: "Laser Tag"
+},
+  rsvp: "Yes"
+});
+
+
+db.connections.find().pretty();
+db.users.find().pretty();
+db.userconnections.find().pretty();
+
+
