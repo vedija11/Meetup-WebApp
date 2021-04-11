@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Escapade - Events Registered</title>
+    <link rel="stylesheet" type="text/css" href="../assets/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <%- include ('./partials/header.ejs'); -%>
+    <%- include ('./partials/navigation.ejs'); -%>
+    <main id="connect-form">
+        <h3 class="table_head"><%= session.fname %>'s connections</h3><br>
+        <% if(userConnectionsList != undefined && userConnectionsList.length>0){ %>
+        <table>
+            <tr>
+                <th>Connection</th>
+                <th>Category</th>
+                <th>Going?</th>
+                <th>Actions</th>
+            </tr>
+            <% userConnectionsList.forEach(function(item){ %>
+            <tr>
+                <td><%= item.connection.connectionTopic %></td>
+                <td><%= item.connection.connectionName %></td>
+                <td><%= item.rsvp %></td>
+                <td>
+                    <form>
+                        <button formmethod="post"
+                            formaction="./connection?connectionId=<%=item.connection.connectionId%>"
+                            class="btn-default">Update</button>
+                        <button formmethod="post"
+                            formaction='savedConnections?connectionId=<%=item.connection.connectionId%>&action=delete'
+                            class="btn-default">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
+        </table>
+        <% } else{ %>
+        <p>You haven't registered to any events yet. Go to
+            <a href="/connections">Connections</a>
+            page to register yourself now!</p>
+        <% } %>
+    </main>
+    <%- include ('./partials/footer.ejs'); -%>
+</body>
+
+</html>

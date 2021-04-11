@@ -1,0 +1,440 @@
+@charset "UTF-8";
+
+header, main, nav, section, article, footer {
+    display: block;
+}
+
+html, body, h1, h3, h4, ul, li, a, p, header, main, nav, section, article, footer {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+html { overflow-y: scroll; }
+
+header {
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+}
+
+body {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: lightblue;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.navbar {
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+    border-bottom: 1px solid lightblue;
+}
+
+.logo {
+    width: 100px;
+    float: left;
+}
+
+.menu {
+    float: right;
+}
+
+.menu li {
+    margin-top: 50px;
+    float: left;
+    width: 220px;
+    text-align: center;
+    list-style-type: none;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.menu a:hover {
+    color: lightblue;
+}
+
+.menu2 {
+    float: left;
+    width: 100%;
+    padding-top: 10px ;
+    padding-bottom: 15px;
+    background-color: black;
+    text-indent: 30px;
+    text-transform: uppercase;
+}
+
+.menu2 a {
+    color: white;
+}
+
+.menu2 :hover {
+    color: lightblue;
+}
+
+main {
+    margin-bottom: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 800px;
+    float: left;
+}
+
+.conn_main_page {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+article {
+    display: inline-block;
+}
+
+.subhead1 {
+    margin-left: 150px;
+    text-align: left justify;
+    display: block;
+}
+
+.subhead1 li{
+    margin-left: 12px;
+}
+
+.subhead1 li a{
+    color: darkblue;
+    text-decoration: none;
+}
+
+.subhead1 li :hover{
+    color: red;
+}
+
+.subhead2 {
+    margin-left: 200px;
+    text-align: left justify;
+    display: block;
+}
+
+.subcategory {
+    margin-left: 80px;
+}
+
+h4 {
+    padding-left: 10px;
+    font-weight: lighter;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.page_details h3, .page_details p {
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: auto;
+}
+
+.club_icon {
+    float: left;
+    width: 200px;
+}
+
+article {
+    margin-top: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+p {
+    font-size: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: left;
+    font-weight: lighter;
+}
+
+.table_head{
+    color: white;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.welcome_user{
+    color: lightblue;
+    float: right;
+    margin-right: 50px;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.footbar {
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+
+.foot {
+    display: inline-block;
+}
+
+.foot li {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: left;
+    text-align: center;
+    list-style-type: none;
+}
+
+.foot li a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+button {
+    display: inline-block;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 2px;
+}
+
+.btn-success {
+    background-color: rgb(6, 179, 6);
+}
+
+.btn-danger {
+    background-color: red;
+}
+
+.btn-primary {
+    background-color: blue;
+}
+
+.btn-default {
+    background-color: rgb(19, 17, 17);
+}
+
+.btn-success:hover{
+    background-color: green;
+}
+
+.btn-danger:hover {
+    background-color: darkred;
+}
+
+.btn-primary:hover {
+    background-color: darkblue;
+}
+
+aside {
+    margin-top: 100px;
+    margin-right: 150px;
+}
+
+.home {
+    margin-top: 30px;
+    width: 100%;
+}
+
+table {
+    margin-top: 10px;
+    margin-left: 50px;
+    border-collapse: collapse;
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: dimgray;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2d7;
+}
+
+.social_icon {
+    display: inline;
+}
+
+.social_icon li {
+    list-style-type: none;
+    float: right;
+    margin-top: 15px;
+    margin-right: 20px;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+
+  .fa:hover {
+      opacity: 0.7;
+  }
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+.fa-instagram {
+    background: #f1232d;
+    color: white;
+  }
+
+.search-container {
+    float: right;
+}
+
+.search-container p {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 25px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.search-container button {
+    padding: 3px 5px;
+    margin-top: 10px;
+    margin-right: 16px;
+    background: lightgray;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.search-container input[type=text] {
+    padding: 6px;
+    margin-top: 10px;
+    margin-left: 80px;
+    font-size: 17px;
+    border: none;
+}
+
+.search-container button:hover {
+    background: gray;
+}
+
+.category_icon {
+    width: 180px;
+    height: 120px;
+    margin-left: 150px;
+}
+
+input[type=text], input[type=password], input[type=email], textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=datetime-local] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+label {
+  font-weight: normal;
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  margin-top: 12px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  width: 30%;
+  margin-right: 150px;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  padding-right: 120px;
+  box-sizing: border-box;
+}
+
+.col-25 {
+  text-align: right;
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#connect-form{
+    margin-left: 20%;
+    margin-top: 20px;
+}
+
+.validator{
+  margin-left: 165px;
+  color: red;
+}
+
+.error{
+  color: red;
+ }
+
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}

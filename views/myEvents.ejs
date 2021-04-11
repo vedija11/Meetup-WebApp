@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Escapade - Events Registered</title>
+    <link rel="stylesheet" type="text/css" href="../assets/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <%- include ('./partials/header.ejs'); -%>
+    <%- include ('./partials/navigation.ejs'); -%>
+    <main id="connect-form">
+        <h3 class="table_head"><%= session.fname %>'s connections</h3><br>
+        <% if(userEventsList != undefined && userEventsList.length>0){ %>
+        <table>
+            <tr>
+                <th>Connection</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+            <% userEventsList.forEach(function(item){ %>
+            <tr>
+                <td><%= item.connectionTopic %></td>
+                <td><%= item.connectionName %></td>
+                <td>
+                    <form>
+                        <button formmethod="post"
+                            formaction='editConnection?connectionId=<%=item.connectionId%>&action=edit'
+                            class="btn-default">Edit</button>
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
+        </table>
+        <% } else{ %>
+        <p>You have not created any events yet. Go to
+            <a href="/newConnection">New Connections</a>
+            page to create an event!</p>
+        <% } %>
+    </main>
+    <%- include ('./partials/footer.ejs'); -%>
+</body>
+
+</html>

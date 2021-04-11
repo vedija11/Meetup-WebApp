@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Escapade - Login</title>
+    <link rel="stylesheet" type="text/css" href="../assets/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <%- include ('./partials/header.ejs'); -%>
+    <%- include ('./partials/navigation.ejs'); -%>
+    <main id="connect-form">
+        <div class="container">
+            <form action="/signup" method="post">
+                <h1 class="subhead2">Sign Up</h1><br>
+                <p class="subhead2">Please fill in this form to create an account.</p><br>
+                <% if(login === 'Invalid' || login !== undefined) { %>
+                <h4 class="validator">User already exists! Please use different userID/email</h4>
+                <% } %>
+                <div>
+                    <% if(errors != undefined){ %>
+                    <h3 class="validator"> You had following validation errors...Fix them to proceed!</h3>
+                    <% } %>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="fname">First Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input id="fname" type="text" name="fname" placeholder="Enter first name" required>
+                        <h4 class="error"><%if(errors) {%><%errors.forEach(function(error) {%><%if(error.param == 'fname') {%><%=error.msg%><%}%><%})%><%}%></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="lname">Last Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input id="lname" type="text" name="lname" placeholder="Enter last name" required>
+                        <h4 class="error"><%if(errors) {%><%errors.forEach(function(error) {%><%if(error.param == 'lname') {%><%=error.msg%><%}%><%})%><%}%></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="col-75">
+                        <input id="email" type="text" name="email" placeholder="Enter email" required>
+                        <h4 class="error"><%if(errors) {%><%errors.forEach(function(error) {%><%if(error.param == 'email') {%><%=error.msg%><%}%><%})%><%}%></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="address">Address</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea id="address" name="address" placeholder="Enter address"
+                        style="height:100px" required></textarea>
+                        <h4 class="error"><%if(errors) {%><%errors.forEach(function(error) {%><%if(error.param == 'address') {%><%=error.msg%><%}%><%})%><%}%></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="city">City</label>
+                    </div>
+                    <div class="col-75">
+                        <input id="city" type="text" name="city" placeholder="Enter city" required>
+                        <h4 class="error"><%if(errors) {%><%errors.forEach(function(error) {%><%if(error.param == 'city') {%><%=error.msg%><%}%><%})%><%}%></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="zipcode">Zip Code</label>
+                    </div>
+                    <div class="col-75">
+                        <input id="zipcode" type="text" name="zipcode" placeholder="Enter zipcode" required>
+                        <h4 class="error"><%if(errors) {%><%errors.forEach(function(error) {%><%if(error.param == 'zipcode') {%><%=error.msg%><%}%><%})%><%}%></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="country">Country</label>
+                    </div>
+                    <div class="col-75">
+                        <input id="country" type="text" name="country" placeholder="Enter country" required>
+                        <h4 class="error"><%if(errors) {%><%errors.forEach(function(error) {%><%if(error.param == 'country') {%><%=error.msg%><%}%><%})%><%}%></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="uid">User Id</label>
+                    </div>
+                    <div class="col-75">
+                        <input id="uid" type="text" name="uid" placeholder="Enter userId" required>
+                        <h4 class="error"><%if(errors) {%><%errors.forEach(function(error) {%><%if(error.param == 'uid') {%><%=error.msg%><%}%><%})%><%}%></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="pwd">Password</label>
+                    </div>
+                    <div class="col-75">
+                        <input id="pwd" type="password" name="pwd" placeholder="Enter password" required>
+                        <h4 class="error"><%if(errors) {%><%errors.forEach(function(error) {%><%if(error.param == 'pwd') {%><%=error.msg%><%}%><%})%><%}%></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="submit" value="SIGN UP" name="userSignUp">
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include ('./partials/footer.ejs'); -%>
+</body>
+
+</html>

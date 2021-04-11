@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Escapade - New Event</title>
+    <link rel="stylesheet" type="text/css" href="../assets/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="node-calendar.js"></script>
+</head>
+
+<body>
+    <%- include ('./partials/header.ejs'); -%>
+    <%- include ('./partials/navigation.ejs'); -%>
+    <main id="connect-form">
+        <div class="container">
+            <form action="/connections" method="post">
+                <div>
+                    <% if(errors != undefined){ %>
+                    <h3 class="validator"> You had following validation errors...Fix them to proceed!</h3>
+                    <% } %>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="topic">Topic</label>
+                    </div>
+                    <div class="col-75">
+                        <input id="topic" type="text" name="topic" placeholder="Enter event topic" required>
+                        <h4 class="error"><%if(errors) {%><%errors.forEach(function(error) {%><%if(error.param == 'topic') {%><%=error.msg%><%}%><%})%><%}%></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input id="name" type="text" name="name" placeholder="Enter event name" required>
+                        <h4 class="error"><%if(errors) {%><%errors.forEach(function(error) {%><%if(error.param == 'name') {%><%=error.msg%><%}%><%})%><%}%></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="details">Details</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea id="details" name="details" placeholder="Enter event details" style="height:200px" required></textarea>
+                            <h4 class="error"><%if(errors) {%><%errors.forEach(function(error) {%><%if(error.param == 'details') {%><%=error.msg%><%}%><%})%><%}%></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="where">Where</label>
+                    </div>
+                    <div class="col-75">
+                        <input id="where" type="text" name="where" placeholder="Enter event location" required>
+                        <h4 class="error"><%if(errors) {%><%errors.forEach(function(error) {%><%if(error.param == 'where') {%><%=error.msg%><%}%><%})%><%}%></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="when">When</label>
+                    </div>
+                    <div class="col-75">
+                        <input id="when" type="datetime-local" name="when" required>
+                        <h4 class="error"><%if(errors) {%><%errors.forEach(function(error) {%><%if(error.param == 'when') {%><%=error.msg%><%}%><%})%><%}%></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="submit" value="CREATE CONNECTION" name="addConn">
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include ('./partials/footer.ejs'); -%>
+</body>
+
+</html>

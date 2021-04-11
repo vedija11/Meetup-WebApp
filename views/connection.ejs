@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Escapade - <%= data.connectionTopic %></title>
+    <link rel="stylesheet" type="text/css" href="../assets/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <%- include ('./partials/header.ejs'); -%>
+    <%- include ('./partials/navigation.ejs'); -%>
+    <main>
+        <section class="subcategory">
+            <h2><%= data.connectionTopic %></h2>
+            <img class="club_icon" src="<%= data.imageURL %>" alt="<%= data.connectionTopic %>">
+            <h4 style="font-weight: bold;">Organized by <%= data.hostedBy %></h4>
+            <h4><%= data.connectionDate %></h4>
+            <h4><%= data.connectionTime %></h4>
+            <h4><%= data.connectionPlace %></h4>
+        </section>
+        <br>
+        <section class="subcategory">
+            <div class="page_details">
+                <h3>Details</h3>
+                <p><%= data.connectionDetails %></p>
+            </div>
+        </section>
+    </main>
+    <aside>
+        <h3>Are you going? <%= data.going %> people are going</h3>
+        <form action="<% if(session!=undefined){ %>
+                    savedConnections?connectionId=<%= data.connectionId %>&action=save
+                  <% } else { %>
+                    login
+                  <% } %>" method="<% if(session!=undefined){ %>post<% } else { %>get<% } %>">
+            <button class="btn-success" name="response" value="Yes">Yes</button>
+            <button class="btn-danger" name="response" value="No">No</button>
+            <button class="btn-primary" name="response" value="Maybe">Maybe</button>
+        </form>
+    </aside>
+    <%- include ('./partials/footer.ejs'); -%>
+</body>
+
+</html>

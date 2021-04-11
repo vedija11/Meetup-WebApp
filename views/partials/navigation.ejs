@@ -1,0 +1,10 @@
+<%if(session == undefined) { %>
+<div class="menu2">
+    <a href="/connections">Connections</a>
+</div>
+<% } else { %>
+  <div class="menu2">
+      <a href="/connections">Connections</a>
+      <h3 class="welcome_user">Welcome <%= session.fname %>!</h3>
+  </div>
+<% } %>

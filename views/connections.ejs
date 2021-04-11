@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Escapade - Events</title>
+    <link rel="stylesheet" type="text/css" href="../assets/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <%- include ('./partials/header.ejs'); -%>
+    <%- include ('./partials/navigation.ejs'); -%>
+    <main class="conn_main_page">
+        <% Object.keys(data).forEach(function(index) { %>
+        <article>
+            <img class="category_icon" src="<%= data[index][0][2] %>" alt="image" />
+            <h3 class="subhead1"><%= index %></h3>
+            <ul class="subhead1">
+                <% data[index].forEach(function(val) {%>
+                <li> <a href="/connection?connectionId=<%= val[1] %>"> <%= val[0] %> </a> </li>
+                <% }); %>
+            </ul>
+        </article>
+        <% }); %>
+    </main>
+    <%- include ('./partials/footer.ejs'); -%>
+</body>
+
+</html>

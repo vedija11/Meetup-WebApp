@@ -1,0 +1,23 @@
+<header class="navbar">
+    <div class="logo_div">
+        <a href="/index"><img class="logo" src="../assets/images/icon.png" alt="travel"></a>
+    </div>
+    <%if(session == undefined) { %>
+      <nav class="navbar_links">
+          <ul class="menu">
+              <li><a href="/newConnection">Start a new Connection</a></li>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/signup">Sign Up</a></li>
+          </ul>
+      </nav>
+    <% } else { %>
+      <nav class="navbar_links">
+          <ul class="menu">
+              <li><a href="/newConnection">Start a new Connection</a></li>
+              <li><a href="/myEvents">My Events</a></li>
+              <li><a href="/savedConnections">My Saved Connections</a></li>
+              <li><a href="/logout">Sign Out</a></li>
+          </ul>
+      </nav>
+    <% } %>
+</header>
